@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import PackingList from './components/pages/PackingList/PackingList';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app - HELLO!</Text>
-      <StatusBar style="auto" />
+    <View>
+      <PackingList />
     </View>
   );
 }
@@ -14,8 +14,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
  
