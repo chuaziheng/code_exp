@@ -2,11 +2,17 @@ import * as React from 'react';
 import { TextInput, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default CreateBroadcastScreen = ()  => {
+const CreateBroadcastScreen = ()  => {
     const [text, onChangeText] = React.useState(null);
 
     return (
         <SafeAreaView>
+            <TextInput
+                style={styles.input}
+                onChangeText={onChangeText}
+                value={text}
+                placeholder="Title"
+            />
             <TextInput
                 style={styles.input}
                 onChangeText={onChangeText}
@@ -25,3 +31,5 @@ const styles = StyleSheet.create({
       padding: 10,
     },
   });
+
+export default CreateBroadcastScreen;
