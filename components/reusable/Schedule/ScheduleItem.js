@@ -34,19 +34,24 @@ const styles = StyleSheet.create({
         // fontFamily: 'Montserrat-Bold',
         color: colors.textAccent,
         fontSize: 16,
-        width: 40,
+        width: 50,
         fontWeight: '500',
     },
     venueText: {
         // fontFamily: 'Montserrat-Bold',
         color: colors.textAccent,
         fontSize: 16,
+        width: 110,
         fontWeight: '500',
+        textAlign: 'center'
+
     },
     taskText: {
         color: colors.textDark,
         fontSize: 16,
+        width: 150,
         fontWeight: '500',
+        textAlign: 'center'
     },
     scheduleItemWrapper: {
         flexDirection: 'row',

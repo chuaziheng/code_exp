@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import colors from '../../../assets/colors/colors';
@@ -9,22 +9,27 @@ import scheduleData from '../../../assets/dummydata/data';
 const ScheduleCard = () => {
     return (
         <View style={styles.scheduleCardWrapper}>
-            <View style={styles.popularCardWrapper}>
-                {/* {
-                    scheduleData.map((item) => {
-                        <ScheduleItem 
-                            key={item.id}
-                            time={item.time}
-                            task={item.task}
-                            venue={item.venue}
-                            />
-                    })
-                } */}
-                <ScheduleItem time={'0700'} task={'REVEILLE'} venue={'BUNK'}/>
-                <ScheduleItem/>
-                <ScheduleItem/>
-               
-            </View>
+            <TouchableOpacity
+            //   key={item.id}
+            //   onPress={() =>
+            //     navigation.navigate('Details', {
+            //       item: item,
+            //     })
+              >
+                <View style={styles.popularCardWrapper}>
+                    {
+                        scheduleData.map((item) => (
+                            <ScheduleItem 
+                                key={item.id}
+                                time={item.time}
+                                task={item.task}
+                                venue={item.venue}
+                                />
+                        ))
+                    }
+            
+                </View>
+            </TouchableOpacity>
         </View>
     )
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 // import categoriesData from '../assets/data/categoriesData';
 // import popularData from '../assets/data/popularData';
 import colors from '../../../assets/colors/colors';
@@ -7,8 +7,10 @@ import Feather from 'react-native-vector-icons/Feather';
 // import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ScheduleCard from '../../reusable/Schedule/ScheduleCard';
+import { NavigationHelpersContext } from '@react-navigation/native';
+import QuickButton from '../../reusable/Button';
 
-export default HomeScreenCom = () => {
+export default HomeScreenCom = ({ navigation }) => {
   return (
     <View style={styles.container}>
       
@@ -31,7 +33,31 @@ export default HomeScreenCom = () => {
             <Text style={styles.bodyTitle}>What's happening next?</Text>
             <ScheduleCard/>
             <Text style={styles.bodyTitle}>Quick Actions</Text>
-            
+            <View style={styles.buttonGrid}>
+              <View style={styles.buttonRow}>
+                <QuickButton navigation={navigation} title={'Scheduler'} nextPage={'HomeMan'} />
+                <QuickButton navigation={navigation} title={'Nominal Roll'} nextPage={'HomeMan'} />
+                <QuickButton navigation={navigation} title={'Broadcast'} nextPage={'HomeMan'} />
+              </View>
+              <View style={styles.buttonRow}>
+                <QuickButton navigation={navigation} title={'Packing List'} nextPage={'HomeMan'} />
+                <QuickButton navigation={navigation} title={'Personal Data'} nextPage={'HomeMan'} />
+                <QuickButton navigation={navigation} title={'Duty Roster'} nextPage={'HomeMan'} />
+              </View>
+            </View>
+            <Text style={styles.bodyTitle}>Announcements</Text>
+            <View style={styles.buttonGrid}>
+              <View style={styles.buttonRow}>
+                <QuickButton navigation={navigation} title={'Scheduler'} nextPage={'HomeMan'} />
+                <QuickButton navigation={navigation} title={'Nominal Roll'} nextPage={'HomeMan'} />
+                <QuickButton navigation={navigation} title={'Broadcast'} nextPage={'HomeMan'} />
+              </View>
+              <View style={styles.buttonRow}>
+                <QuickButton navigation={navigation} title={'Packing List'} nextPage={'HomeMan'} />
+                <QuickButton navigation={navigation} title={'Personal Data'} nextPage={'HomeMan'} />
+                <QuickButton navigation={navigation} title={'Duty Roster'} nextPage={'HomeMan'} />
+              </View>
+            </View>
           </View>
         </View>
       </SafeAreaView>
@@ -44,6 +70,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
+    overflow: 'scroll'
   },
   headerWrapper: {
     flexDirection: 'row',
@@ -89,5 +116,28 @@ const styles = StyleSheet.create({
     color: colors.textDark,
     marginTop: 20,
   },
+  orderWrapper: {
+    marginTop: 60,
+    marginHorizontal: 20,
+    backgroundColor: colors.primary,
+    borderRadius: 50,
+    paddingVertical: 25,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  orderText: {
+    // fontFamily: 'Montserrats-Bold',
+    fontSize: 14,
+    marginRight: 10,
+  },
+  buttonGrid: {
+    marginTop: 10,
+    flexDirection: 'column',
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+  }
 });
 
