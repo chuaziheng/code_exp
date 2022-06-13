@@ -8,7 +8,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ScheduleCard from '../../reusable/Schedule/ScheduleCard';
 
-export default HomeScreenMan = ({route, navigation}) => {
+const HomeScreenMan = ({route, navigation}) => {
   return (
     <View style={styles.container}>
       
@@ -102,3 +102,4 @@ const styles = StyleSheet.create({
   },
 });
 
+export default HomeScreenMan;

@@ -9,8 +9,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import ScheduleCard from '../../reusable/Schedule/ScheduleCard';
 import { NavigationHelpersContext } from '@react-navigation/native';
 import QuickButton from '../../reusable/Button';
+import AnnouncementCard from '../../reusable/Announcement/AnnouncementCard';
 
-export default HomeScreenCom = ({ navigation }) => {
+const HomeScreenCom = ({ navigation }) => {
   return (
     <View style={styles.container}>
       
@@ -46,18 +47,7 @@ export default HomeScreenCom = ({ navigation }) => {
               </View>
             </View>
             <Text style={styles.bodyTitle}>Announcements</Text>
-            <View style={styles.buttonGrid}>
-              <View style={styles.buttonRow}>
-                <QuickButton navigation={navigation} title={'Scheduler'} nextPage={'HomeMan'} />
-                <QuickButton navigation={navigation} title={'Nominal Roll'} nextPage={'HomeMan'} />
-                <QuickButton navigation={navigation} title={'Broadcast'} nextPage={'HomeMan'} />
-              </View>
-              <View style={styles.buttonRow}>
-                <QuickButton navigation={navigation} title={'Packing List'} nextPage={'HomeMan'} />
-                <QuickButton navigation={navigation} title={'Personal Data'} nextPage={'HomeMan'} />
-                <QuickButton navigation={navigation} title={'Duty Roster'} nextPage={'HomeMan'} />
-              </View>
-            </View>
+            {/* <AnnouncementCard /> */}
           </View>
         </View>
       </SafeAreaView>
@@ -141,3 +131,4 @@ const styles = StyleSheet.create({
   }
 });
 
+export default HomeScreenCom;
