@@ -10,5 +10,5 @@ const colors = {
     grey: '#F5F5F5',
     textGrey: '#737373',
   };
-  
+
   export default colors;
