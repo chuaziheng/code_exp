@@ -118,11 +118,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
 
-    additem: {
-
-
-    },
-
     Emart: {
         backgroundColor: '#639C84',
         width: 140,
