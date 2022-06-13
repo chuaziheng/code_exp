@@ -2,9 +2,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet, Text, View } from 'react-native';
 import CreateBroadcastScreen from './components/pages/CreateBroadcast/CreateBroadcast';
-
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from './components/pages/LoginScreen/LoginScreen';
 import HomeScreen from './components/pages/LoginScreen/HomeScreen';
 import * as React from 'react';
