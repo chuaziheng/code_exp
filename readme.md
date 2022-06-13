@@ -14,3 +14,5 @@
 5. `npm install @react-navigation/native-stack`
 6. `expo install firebase --npm`
 7. `expo start`
+
+Ensure that the index.js file is added to your project before running the `expo start` code.
