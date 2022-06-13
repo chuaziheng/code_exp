@@ -11,10 +11,8 @@ const CreateBroadcastScreen = ()  => {
         <SafeAreaView>
             <View style={styles.headerWrapper}>
             {/* Header */}
-            <View style={styles.titlesWrapper}>
                 {/* <Text style={styles.titlesSubtitle}>Hello,</Text> */}
                 <Text style={styles.titlesTitle}>Broadcast</Text>
-            </View>
 
             </View>
             <TextInput
@@ -29,12 +27,13 @@ const CreateBroadcastScreen = ()  => {
                 value={messageText}
                 placeholder="ENTER MESSAGE"
             />
-            <Button
-                style={styles.submitButton}
-                title="Submit"
-                onPress={() => alert('Simple Button pressed')}
-                // onPress={() => Alert.alert('Simple Button pressed')}
-            />
+            <View style={styles.submitButton}>
+                <Button
+                    title="Submit"
+                    onPress={() => alert('Simple Button pressed')}
+                    // onPress={() => Alert.alert('Simple Button pressed')}
+                />
+            </View>
         </SafeAreaView>
     );
 }
@@ -42,10 +41,11 @@ const CreateBroadcastScreen = ()  => {
 const styles = StyleSheet.create({
     headerWrapper: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         paddingHorizontal: 15,
         paddingTop: 20,
-        alignItems: 'right',
+        alignItems: "center",
+        textAlign: "center"
       },
     inputTitle: {
       height: 40,
@@ -70,15 +70,15 @@ const styles = StyleSheet.create({
         fontSize: 32,
         color: colors.textDark,
         fontWeight: '600',
-        justifyContent: "center",
-        alignItems: "center"
+        // justifyContent: "center",
+        // alignItems: "center"
       },
       submitButton: {
-          flex: 1,
-          width: 30,
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'center',
+        flexDirection: 'row',
+        width: 30,
+
+        alignItems: 'center',
+
       }
   });
 
