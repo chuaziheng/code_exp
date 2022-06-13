@@ -6,9 +6,11 @@ import {
     getAuth,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
-    onAuthStateChanged
+    onAuthStateChanged,
+    signInWithPopup,
+    GoogleAuthProvider
 } from 'firebase/auth'
-import {} from '../../../index'
+// import { signInWithGoogle } from '../../../index'
 
 
 const LoginScreen = () => {
@@ -19,14 +21,39 @@ const LoginScreen = () => {
   
     useEffect(() => {
         const auth = getAuth();
-        const unsubscribe = onAuthStateChanged(user => {
+        onAuthStateChanged(auth, (user) => {
             if (user) {
             navigation.replace("Home")
             }
-        })
+        });
     
-        return unsubscribe
+        // return unsubscribe
     }, [])
+
+    const handleGoogleSignIn = () => {
+        const auth = getAuth();
+        const provider = new GoogleAuthProvider();
+
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+                // The signed-in user info.
+                const user = result.user;
+                console.log('Google Sign in with: ', user.email)
+                // ...
+            }).catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // The email of the user's account used.
+                const email = error.customData.email;
+                // The AuthCredential type that was used.
+                const credential = GoogleAuthProvider.credentialFromError(error);
+                // ...
+            });
+    }
 
   
     const handleSignUp = () => {
@@ -55,45 +82,53 @@ const LoginScreen = () => {
     }
   
     return (
-      <KeyboardAvoidingView
-        style={styles.container}
-        behavior="padding"
-      >
-        <View style={styles.inputContainer}>
-          <TextInput
-            placeholder="Email"
-            value={email}
-            onChangeText={text => setEmail(text)}
-            style={styles.input}
-          />
-          <TextInput
-            placeholder="Password"
-            value={password}
-            onChangeText={text => setPassword(text)}
-            style={styles.input}
-            secureTextEntry
-          />
-        </View>
-  
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            onPress={handleLogin}
-            style={styles.button}
-          >
-            <Text style={styles.buttonText}>Login</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={handleSignUp}
-            style={[styles.button, styles.buttonOutline]}
-          >
-            <Text style={styles.buttonOutlineText}>Register</Text>
-          </TouchableOpacity>
-        </View>
-      </KeyboardAvoidingView>
+        <KeyboardAvoidingView
+            style={styles.container}
+            behavior="padding"
+        >
+            <View style={styles.buttonContainer}>
+            <TouchableOpacity
+                onPress={handleGoogleSignIn}
+                style={styles.button}
+            >
+                <Text style={styles.buttonText}>Sign in with Google</Text>
+            </TouchableOpacity>
+            </View>
+            <View style={styles.inputContainer}>
+            <TextInput
+                placeholder="Email"
+                value={email}
+                onChangeText={text => setEmail(text)}
+                style={styles.input}
+            />
+            <TextInput
+                placeholder="Password"
+                value={password}
+                onChangeText={text => setPassword(text)}
+                style={styles.input}
+                secureTextEntry
+            />
+            </View>
+    
+            <View style={styles.buttonContainer}>
+            <TouchableOpacity
+                onPress={handleLogin}
+                style={styles.button}
+            >
+                <Text style={styles.buttonText}>Login</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={handleSignUp}
+                style={[styles.button, styles.buttonOutline]}
+            >
+                <Text style={styles.buttonOutlineText}>Register</Text>
+            </TouchableOpacity>
+            </View>
+        </KeyboardAvoidingView>
     )
   }
   
-  export default LoginScreen
+  export default LoginScreen;
   
   const styles = StyleSheet.create({
     container: {
@@ -141,4 +176,3 @@ const LoginScreen = () => {
       fontSize: 16,
     },
   })
-  
