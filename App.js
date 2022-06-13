@@ -1,4 +1,11 @@
-// In App.js in a new project
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LoginScreen from './components/pages/LoginScreen/LoginScreen';
+import HomeScreen from './components/pages/LoginScreen/HomeScreen';
+
+const Stack = createNativeStackNavigator();
 
 import * as React from 'react';
 import { View, Text } from 'react-native';
@@ -22,9 +29,19 @@ function App() {
           name="HomeMan" 
           component={HomeScreenMan} 
           options={{headerShown: false,}}/>
+        <Stack.Screen options={{headerShown:false}} name="Login" component={LoginScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 export default App;
