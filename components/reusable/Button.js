@@ -41,8 +41,9 @@ const styles = StyleSheet.create({
     },
     btnText: {
       // fontFamily: 'Montserrats-Bold',
-      fontSize: 14,
-      marginRight: 10,
-      textAlign: 'center'
+      fontSize: 16,
+      textAlign: 'center',
+      color: colors.white,
+      fontWeight: 500
     },
   });
