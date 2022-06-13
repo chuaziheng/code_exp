@@ -44,7 +44,6 @@ const styles = StyleSheet.create({
         width: 110,
         fontWeight: '500',
         textAlign: 'center'
-
     },
     taskText: {
         color: colors.textDark,
