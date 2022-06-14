@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native-web';
+import ScheduleItem from '../../reusable/Schedule/ScheduleItem';
 
 const Period = ({
     // id,

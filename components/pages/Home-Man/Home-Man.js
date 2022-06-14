@@ -181,6 +181,7 @@ const styles = StyleSheet.create({
     color: colors.white,
     marginTop: 20,
   },
+  
   orderWrapper: {
     marginTop: 60,
     marginHorizontal: 20,
@@ -189,7 +190,9 @@ const styles = StyleSheet.create({
     paddingVertical: 25,
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
+    textAlign: 'center',
+    fontWeight: '600',
+
   },
   orderText: {
     // fontFamily: 'Montserrats-Bold',

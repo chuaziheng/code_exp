@@ -39,8 +39,8 @@ const CreateBroadcastScreen = ({ navigation }) => {
             onPress={() => alert('Simple Button pressed')}
           // onPress={() => Alert.alert('Simple Button pressed')}
           /> */}
-          <TouchableOpacity onPress={() => handleAddItem()}>
-            <Text style={styles.submitButton}>Submit</Text>
+          <TouchableOpacity>
+            <Text style={styles.submitButton}>Publish</Text>
           </TouchableOpacity>
         
       </View>
@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   input: {
+    textAlignVertical: 'top',
     paddingVertical: 10,
     paddingHorizontal: 10,
     backgroundColor: '#FFF',

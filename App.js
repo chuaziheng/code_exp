@@ -1,6 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
 import PackingList from './components/pages/PackingList/PackingList';
-import Schedule from './components/pages/Schedule/Schedule';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import CreateBroadcastScreen from './components/pages/CreateBroadcast/CreateBroadcast';
@@ -15,6 +14,7 @@ import HomeScreenCom from './components/pages/Home-Commander/Home-Com';
 import HomeScreenMan from './components/pages/Home-Man/Home-Man';
 import PersonalData from './components/pages/PersonalData/PersonalData';
 import DutyRoster from './components/pages/DutyRoster/DutyRoster'
+import Schedule from './components/pages/Schedule/Schedule';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -47,6 +47,10 @@ function App() {
         <Stack.Screen
           name="DutyRoster"
           component={DutyRoster}
+          options={{headerShown: false,}}/>
+          <Stack.Screen
+          name="Schedule"
+          component={Schedule}
           options={{headerShown: false,}}/>
       </Stack.Navigator>
       {/* <Drawer.Navigator

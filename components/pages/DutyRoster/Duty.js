@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import { TouchableOpacity } from 'react-native-web';
 import colors from '../../../assets/colors/colors';
 
@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.05,
         shadowRadius: 10,
         elevation: 2,
+        width: Dimensions.get('window').width * 0.85,
     },
 
     // main: {

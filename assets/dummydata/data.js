@@ -33,4 +33,13 @@ export const announcementData = [
       content: 'Lorem Ipsum Lorep Ipsum',
     },
   ];
+
+  export const dutyData = [
+    {
+      id: '1',
+      time: '0700',
+      personel: 'CPL RAKESH',
+      status: 'ON DUTY',
+    }
+  ];
   

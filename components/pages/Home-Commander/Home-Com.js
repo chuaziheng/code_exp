@@ -17,6 +17,7 @@ import {
   signOut,
   onAuthStateChanged
 } from 'firebase/auth'
+import DutyRosterCard from '../../reusable/DutyRoster/DutyRosterCard';
 
 
 const auth = getAuth();
@@ -59,7 +60,6 @@ const HomeScreenCom = ({ navigation, user }) => {
               style={styles.profileImage}
             />
           </View>
-
           {/* Today View */}
           <View style={styles.header}></View>
           <View style={styles.bodyWrapper}>
@@ -68,7 +68,7 @@ const HomeScreenCom = ({ navigation, user }) => {
               {/* <Text style={styles.bodyTitleWhite}>Quick Actions</Text> */}
               
               <View style={styles.buttonRow}>
-                  <QuickButton navigation={navigation} title={'SCHEDULER'} nextPage={'HomeMan'} />
+                  <QuickButton navigation={navigation} title={'SCHEDULER'} nextPage={'Schedule'} />
                   <QuickButton navigation={navigation} title={'PACKING LIST'} nextPage={'PackingList'} />
                   <QuickButton navigation={navigation} title={'BROADCAST'} nextPage={'CreateBroadcast'} />
                   <QuickButton navigation={navigation} title={'UPLOAD MC'} nextPage={'HomeMan'} />
@@ -87,6 +87,15 @@ const HomeScreenCom = ({ navigation, user }) => {
                 </TouchableOpacity>
               </View>
               <AnnouncementCard />
+              <View style={styles.textWrapper}>
+                <Text style={styles.bodyTitle}>Duty Roster</Text>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate('DutyRoster')}
+                >
+                  <Text style={styles.ViewAll}>View All</Text>
+                </TouchableOpacity>
+              </View>
+              <DutyRosterCard />
               <TouchableOpacity
                   onPress={handleSignOut}
                   style={styles.button}
@@ -101,7 +110,6 @@ const HomeScreenCom = ({ navigation, user }) => {
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -212,11 +220,21 @@ const styles = StyleSheet.create({
     fontSize: 25,
     marginTop: 15,
   },
+  ViewAll: {
+    color: colors.textAccent,
+    fontSize: 15,
+    marginTop: 15,
+  },
   textWrapper: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center'
-  }
+  },
+
+  orderWrapper: {
+    fontWeight: '600',
+  },
+
 });
 
 export default HomeScreenCom;

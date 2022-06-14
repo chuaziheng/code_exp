@@ -1,66 +1,38 @@
 import * as React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
-import Period from './Period';
+import { scheduleData } from '../../../assets/dummydata/data';
+import ScheduleItem from '../../reusable/Schedule/ScheduleItem';
 
-const items = [
-    {
-        id: '1',
-        desc: 'Fieldpack',
-        packed: false,
-    },
 
-    {
-        id: '2',
-        desc: 'Helmet',
-        packed: false,
-    },
-
-    {
-        id: '3',
-        desc: 'Towel Pack',
-        packed: false,
-    },
-
-    {
-        id: '4',
-        desc: 'Toiletries',
-        packed: false,
-    },
-
-    {
-        id: '5',
-        desc: 'Mess Tin Pack',
-        packed: false,
-    },
-]
-
-const Schedule = () => {
+const Schedule = ({navigation}) => {
     return (
         <View style={styles.main}>
                 <View style={styles.header}>
-                    <View style={styles.backbutton}> 
-                    <Feather name='chevron-left' size={18} color={'black'}/>
-                    </View>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
+                        <View style={styles.backbutton}> 
+                            <Feather name='chevron-left' size={18} color={'black'}/>
+                        </View>
+                    </TouchableOpacity>
                     <Text style={styles.title}>Daily Schedule</Text>
                 </View>
+                
                 <View style={styles.items}>
                     {
-                        items.map((i) => (
-                            <Period id ={i.id} desc={i.desc}/>
+                        scheduleData.map((item) => (
+                            <ScheduleItem 
+                                key={item.id}
+                                time={item.time}
+                                task={item.task}
+                                venue={item.venue}
+                                />
                         ))
                     }
 
-                <Text style={styles.Emart}>
-                    Add Item
-                </Text>
                 </View>
-                    <Text style={styles.Emart}>
-                        Browse Emart
-                    </Text>
-
-                
-            
+                <TouchableOpacity>
+                    <Text style={styles.submitButton}>Add Schedule</Text>
+                </TouchableOpacity>
         </View>
     );
 }
@@ -134,4 +106,22 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         borderRadius: 10,
     },
+
+    submitButton: {
+        backgroundColor: '#639C84',
+        width: 100,
+        height: 40,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        fontStyle: 'Lato',
+        color: 'white',
+        fontWeight: 'bold',
+        marginTop: 10,
+        marginBottom: 10,
+        paddingTop: 10,
+        borderRadius: 10,
+    
+      },
   });

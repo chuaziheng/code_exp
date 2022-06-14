@@ -53,8 +53,8 @@ const PersonalData = ({ navigation, user }) => {
                         source={require('../../../assets/images/dp.png')}
                         style={styles.profileImage}
                     />
-                    <Text style={styles.titlesTitle}>Nicholas Halim</Text>
-                    <Text style={styles.titlesSubtitle}>CORPORAL</Text>
+                    <Text style={styles.titlesTitle}>{auth.currentUser?.name}</Text>
+                    <Text style={styles.titlesSubtitle}>{auth.currentUser?.rank}</Text>
                     <TouchableOpacity
                         onPress={handleSignOut}
                         style={styles.button}

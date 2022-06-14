@@ -3930,32 +3930,10 @@ get-port@^3.2.0:
   resolved "https://registry.npmjs.org/get-port/-/get-port-3.2.0.tgz"
   integrity sha512-x5UJKlgeUiNT8nyo/AcnwLnZuZNcSjSw0kogRB+Whd1fjjFq4B1hySFxSFWWSn4mIBzg3sRNUDFYc4g5gjPoLg==
 
-<<<<<<< HEAD
-"function-bind@^1.1.1":
-  "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
-  "resolved" "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
-  "version" "1.1.1"
-
-"gensync@^1.0.0-beta.2":
-  "integrity" "sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg=="
-  "resolved" "https://registry.npmjs.org/gensync/-/gensync-1.0.0-beta.2.tgz"
-  "version" "1.0.0-beta.2"
-
-"get-caller-file@^2.0.1", "get-caller-file@^2.0.5":
-  "integrity" "sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg=="
-  "resolved" "https://registry.npmjs.org/get-caller-file/-/get-caller-file-2.0.5.tgz"
-  "version" "2.0.5"
-
-"get-intrinsic@^1.0.2", "get-intrinsic@^1.1.1":
-  "integrity" "sha512-kWZrnVM42QCiEA2Ig1bG8zjoIMOgxWwYCEeNdwY6Tv/cOSeGpcoX4pXHfKUxNKVoArnrEr2e9srnAxxGIraS9Q=="
-  "resolved" "https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.1.1.tgz"
-  "version" "1.1.1"
-=======
 get-stream@^4.0.0:
   version "4.1.0"
   resolved "https://registry.npmjs.org/get-stream/-/get-stream-4.1.0.tgz"
   integrity sha512-GMat4EJ5161kIy2HevLlr4luNjBgvmj413KaQA7jt4V8B4RDsfpHk7WQ9GVqfYyyx8OS/L66Kox+rJRNklLK7w==
->>>>>>> b9a37e3f955c3a795568e72a7a6f5e8fe124cd97
   dependencies:
     pump "^3.0.0"
 
@@ -6014,10 +5992,10 @@ react-native-codegen@^0.0.17:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
-react-native-gesture-handler@^2.4.2:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-2.4.2.tgz#de93760b0bc251d94e8ae692f9850ec3ed2e4f27"
-  integrity sha512-K3oMiQV7NOVB5RvNlxkyJxU1Gn6m1cYu53MoFA542FVDSTR491d1eQkWDdqy4lW52rfF7IK7eE1LCi+kTJx7jw==
+react-native-gesture-handler@~2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-2.2.1.tgz#672258aa5a40c92a97c736bdde0a8bd6c8c6c692"
+  integrity sha512-P4kAPbSY8VFAjvFNzfePgFsbZEldfEnEfNqOJw6MlpcdXrPGwRbvMqWMVkA9lifdKTZ3XifvAgJ8+R+uEZN0zA==
   dependencies:
     "@egjs/hammerjs" "^2.0.17"
     hoist-non-react-statics "^3.3.0"
@@ -6030,10 +6008,10 @@ react-native-gradle-plugin@^0.0.6:
   resolved "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.0.6.tgz"
   integrity sha512-eIlgtsmDp1jLC24dRn43hB3kEcZVqx6DUQbR0N1ABXGnMEafm9I3V3dUUeD1vh+Dy5WqijSoEwLNUPLgu5zDMg==
 
-react-native-reanimated@^3.0.0-rc.0:
-  version "3.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-3.0.0-rc.0.tgz#05edcb2d9ca99c50d6e0ce378b74a5a0661bba93"
-  integrity sha512-YlkqVPKVs97ZMRwzdrxuhCXvU6RjxXmxE9rOiyAij/uJVMb+5Zx5CQH5ngfKjT/iEqC8HE/n6jd3pi3UlKsPeQ==
+react-native-reanimated@~2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-2.8.0.tgz#93c06ca84d91fb3865110b0857c49a24e316130e"
+  integrity sha512-kJvf/UWLBMaGCs9X66MKq5zdFMgwx8D0nHnolbHR7s8ZnbLdb7TlQ/yuzIXqn/9wABfnwtNRI3CyaP1aHWMmZg==
   dependencies:
     "@babel/plugin-transform-object-assign" "^7.16.7"
     "@babel/preset-typescript" "^7.16.7"
