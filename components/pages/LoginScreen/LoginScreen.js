@@ -56,7 +56,7 @@ const LoginScreen = () => {
                             navigation.replace("HomeCom")
                         }
                     })
-                // navigation.replace("HomeCom")
+                navigation.replace("HomeMan")
             }
         });
     

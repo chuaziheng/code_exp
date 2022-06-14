@@ -4,19 +4,43 @@ import Feather from 'react-native-vector-icons/Feather';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import colors from '../../assets/colors/colors';
 
+// export const btns = [
+//   {
+//     id: '1',
+//     title: 'SCHEDULER',
+//     src:
+//   },
+  
+// ];
+
 const QuickButton = ({
     navigation,
     title,
     nextPage,
-    icon
+    // icon
 }) => {
+    let icon;
+    if (title == 'SCHEDULER') {
+      icon = require('../../../code_exp/assets/icons/Schedule.png')
+    } else if (title == 'PACKING LIST') {
+      icon = require('../../../code_exp/assets/icons/Storage Box.png')
+    } else if (title == 'BROADCAST') {
+      icon = require('../../../code_exp/assets/icons/Megaphone.png')
+    } else if (title == 'UPLOAD MC') {
+      icon = require('../../../code_exp/assets/icons/Health Book.png')
+    } else if (title == 'DUTY ROSTER') {
+      icon = require('../../../code_exp/assets/icons/Move Dirt Around.png')
+    } else if (title == 'PROFILE') {
+      icon = require('../../../code_exp/assets/icons/Account.png')
+    }
+
     return (
         <TouchableOpacity onPress={() => navigation.navigate(nextPage)}
         >   
         <View style={styles.btnContainer}>
             <View style={styles.btnWrapper}>
                 <Image
-                  source={require(`../../../code_exp/assets/icons/${icon}`)}
+                  source={icon}
                   style={styles.profileImage}
                 />
                 {/* <Feather name="chevron-right" size={18} color={colors.black} /> */}

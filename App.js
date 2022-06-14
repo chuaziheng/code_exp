@@ -14,7 +14,9 @@ import * as React from 'react';
 import HomeScreenCom from './components/pages/Home-Commander/Home-Com';
 import HomeScreenMan from './components/pages/Home-Man/Home-Man';
 import PersonalData from './components/pages/PersonalData/PersonalData';
+import DutyRoster from './components/pages/DutyRoster/DutyRoster'
 
+import 'react-native-gesture-handler'
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -44,7 +46,10 @@ function App() {
           name="PackingList"
           component={PackingList}
           options={{headerShown: false,}}/>
-
+        <Stack.Screen
+          name="DutyRoster"
+          component={DutyRoster}
+          options={{headerShown: false,}}/>
       </Stack.Navigator>
       {/* <Drawer.Navigator
         drawerType="front"
