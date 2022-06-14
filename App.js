@@ -14,7 +14,7 @@ import * as React from 'react';
 import HomeScreenCom from './components/pages/Home-Commander/Home-Com';
 import HomeScreenMan from './components/pages/Home-Man/Home-Man';
 import PersonalData from './components/pages/PersonalData/PersonalData';
-
+import 'react-native-gesture-handler'
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();

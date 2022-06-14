@@ -49,12 +49,12 @@ const HomeScreenMan = ({ navigation, user }) => {
             />
             <View>
               <View style={styles.titlesWrapper}>
-              <Feather name="menu" size={24} color={colors.white} />
-                  <Text style={styles.titlesSubtitle}>Hello, CPL Nicholas</Text>
+                <Text style={styles.titlesSubtitle}>Hello,</Text>
+                <Text style={styles.titlesSubtitle}>CPL Nicholas</Text>
               </View>
             </View>
             <Image 
-              source={require('../../../assets/images/dp.png')}
+              source={require('../../../assets/images/nic.jpg')}
               style={styles.profileImage}
             />
           </View>
@@ -67,11 +67,11 @@ const HomeScreenMan = ({ navigation, user }) => {
               {/* <Text style={styles.bodyTitleWhite}>Quick Actions</Text> */}
               
               <View style={styles.buttonRow}>
-                  <QuickButton navigation={navigation} title={'SCHEDULER'} nextPage={'HomeMan'} icon={'Schedule.png'}/>
-                  <QuickButton navigation={navigation} title={'PACKING LIST'} nextPage={'PackingList'} icon={'Storage Box.png'}/>
-                  <QuickButton navigation={navigation} title={'DUTY ROSTER'} nextPage={'HomeMan'} icon={'Move Dirt Around.png'} />
-                  <QuickButton navigation={navigation} title={'ORG CHART'} nextPage={'HomeMan'} icon={'User Menu Male.png'}/>
-                  <QuickButton navigation={navigation} title={'PROFILE'} nextPage={'PersonalData'} icon={'Account.png'}/>
+                  <QuickButton navigation={navigation} title={'SCHEDULER'} nextPage={'HomeCom'} />
+                  <QuickButton navigation={navigation} title={'PACKING LIST'} nextPage={'PackingList'}/>
+                  <QuickButton navigation={navigation} title={'UPLOAD MC'} nextPage={'HomeCom'} />
+                  <QuickButton navigation={navigation} title={'DUTY ROSTER'} nextPage={'HomeCom'} />
+                  <QuickButton navigation={navigation} title={'PROFILE'} nextPage={'PersonalData'} />
               </View>
                           
               <Text style={styles.bodyTitle}>What's happening next?</Text>
@@ -81,7 +81,7 @@ const HomeScreenMan = ({ navigation, user }) => {
                 <TouchableOpacity
                   // onPress={() => navigation.navigate()}
                 >
-                  <Text style={styles.Add}>+</Text>
+                  <Text style={styles.Add}>View All</Text>
                 </TouchableOpacity>
               </View>
               <AnnouncementCard />
@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
   },
   Add: {
     color: colors.textAccent,
-    fontSize: 25,
+    fontSize: 15,
     marginTop: 15,
   },
   textWrapper: {
