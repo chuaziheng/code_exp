@@ -49,8 +49,9 @@ const HomeScreenCom = ({ navigation, user }) => {
             />
             <View>
               <View style={styles.titlesWrapper}>
-              <Feather name="menu" size={24} color={colors.white} />
-                  <Text style={styles.titlesSubtitle}>Hello, MAJ Josephine</Text>
+              {/* <Feather name="menu" size={24} color={colors.white} /> */}
+                  <Text style={styles.titlesSubtitle}>Hello,</Text>
+                  <Text style={styles.titlesSubtitle}>MAJ Josephine</Text>
               </View>
             </View>
             <Image 
@@ -67,12 +68,12 @@ const HomeScreenCom = ({ navigation, user }) => {
               {/* <Text style={styles.bodyTitleWhite}>Quick Actions</Text> */}
               
               <View style={styles.buttonRow}>
-                  <QuickButton navigation={navigation} title={'SCHEDULER'} nextPage={'HomeMan'} icon={'Schedule.png'}/>
-                  <QuickButton navigation={navigation} title={'PACKING LIST'} nextPage={'PackingList'} icon={'Storage Box.png'}/>
-                  <QuickButton navigation={navigation} title={'BROADCAST'} nextPage={'CreateBroadcast'} icon={'Megaphone.png'} />
-                  <QuickButton navigation={navigation} title={'DUTY ROSTER'} nextPage={'HomeMan'} icon={'Move Dirt Around.png'} />
-                  <QuickButton navigation={navigation} title={'ORG CHART'} nextPage={'HomeMan'} icon={'User Menu Male.png'}/>
-                  <QuickButton navigation={navigation} title={'PROFILE'} nextPage={'PersonalData'} icon={'Account.png'}/>
+                  <QuickButton navigation={navigation} title={'SCHEDULER'} nextPage={'HomeMan'} />
+                  <QuickButton navigation={navigation} title={'PACKING LIST'} nextPage={'PackingList'} />
+                  <QuickButton navigation={navigation} title={'BROADCAST'} nextPage={'CreateBroadcast'} />
+                  <QuickButton navigation={navigation} title={'UPLOAD MC'} nextPage={'HomeMan'} />
+                  <QuickButton navigation={navigation} title={'DUTY ROSTER'} nextPage={'HomeCom'} />
+                  <QuickButton navigation={navigation} title={'PROFILE'} nextPage={'PersonalData'} />
               </View>
                           
               <Text style={styles.bodyTitle}>What's happening next?</Text>
@@ -80,7 +81,7 @@ const HomeScreenCom = ({ navigation, user }) => {
               <View style={styles.textWrapper}>
                 <Text style={styles.bodyTitle}>Announcements</Text>
                 <TouchableOpacity
-                  // onPress={() => navigation.navigate()}
+                  onPress={() => navigation.navigate('CreateBroadcast')}
                 >
                   <Text style={styles.Add}>+</Text>
                 </TouchableOpacity>

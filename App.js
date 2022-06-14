@@ -16,6 +16,7 @@ import HomeScreenMan from './components/pages/Home-Man/Home-Man';
 import PersonalData from './components/pages/PersonalData/PersonalData';
 import DutyRoster from './components/pages/DutyRoster/DutyRoster'
 
+import 'react-native-gesture-handler'
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
