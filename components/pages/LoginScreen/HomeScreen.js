@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import index from '../../../index';
+// import index from '../../../index';
 import { useNavigation } from '@react-navigation/core';
 import {
   getAuth, 
@@ -13,17 +13,6 @@ const auth = getAuth();
 const HomeScreen = ({user}) => {
 
   const navigation = useNavigation()
-  
-  // useEffect(() => {
-  //   const auth = getAuth();
-  //   onAuthStateChanged(auth, (user) => {
-  //       if (user) {
-  //       navigation.replace("Login")
-  //       }
-  //   });
-  
-  //     // return unsubscribe
-  // }, [])
 
   const handleSignOut = () =>{
     const auth = getAuth();

@@ -10,6 +10,13 @@ import {
     signInWithPopup,
     GoogleAuthProvider
 } from 'firebase/auth'
+import {
+    getFirestore, collection, onSnapshot,
+    addDoc, deleteDoc, doc,
+    query, where,
+    orderBy, serverTimestamp,
+    updateDoc
+} from 'firebase/firestore'
 // import { signInWithGoogle } from '../../../index'
 
 
@@ -18,12 +25,38 @@ const LoginScreen = () => {
     const [password, setPassword] = useState('')
   
     const navigation = useNavigation()
-  
+
+    const db = getFirestore()
+    const commanderRef = collection(db, 'ManOrCommander')
     useEffect(() => {
         const auth = getAuth();
         onAuthStateChanged(auth, (user) => {
             if (user) {
-            navigation.replace("HomeCom")
+                console.log(user.email)
+                const q = query(commanderRef, where("emailid", "==", user.email))
+                console.log("queried")
+
+                onSnapshot(q, (snapshot) => {
+                        let books = []
+                        snapshot.docs.forEach(doc => {
+                        books.push({ ...doc.data(), id: doc.id })
+                        })
+                        console.log(books)
+
+                        const book = books[0]
+                        console.log(book)
+
+                        if (book['isCommander']===false){
+                            // console.log(book['isCommander'])
+                            console.log("man")
+                            navigation.replace("HomeMan")
+                        } else {
+                            // console.log(book['isCommander'])
+                            console.log("com")
+                            navigation.replace("HomeCom")
+                        }
+                    })
+                // navigation.replace("HomeCom")
             }
         });
     
