@@ -39,7 +39,7 @@ const PersonalData = ({ navigation, user }) => {
         <View style={styles.container}>
 
             <SafeAreaView>
-
+                <View style={styles.body}>
                     <View style={styles.header}>
                         <TouchableOpacity onPress={() => navigation.goBack()}>
                             <View style={styles.backbutton} >
@@ -49,39 +49,44 @@ const PersonalData = ({ navigation, user }) => {
 
                         <Text style={styles.title}>Profile</Text>
                     </View>
+                    <Image
+                        source={require('../../../assets/images/dp.png')}
+                        style={styles.profileImage}
+                    />
+                    <Text style={styles.titlesTitle}>Nicholas Halim</Text>
+                    <Text style={styles.titlesSubtitle}>CORPORAL</Text>
+                    <TouchableOpacity
+                        onPress={handleSignOut}
+                        style={styles.button}
+                    >
+                        <Text style={styles.buttonText}>Personal Details</Text>
+                        <Feather name="chevron-right" size={18} color={colors.white} />
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={handleSignOut}
+                        style={styles.button}
+                    >
+                        <Text style={styles.buttonText}>Medical Status</Text>
+                        <Feather name="chevron-right" size={18} color={colors.white} />
 
-                    <View style={styles.body}>
-                        <Image
-                            source={require('../../../assets/images/dp.png')}
-                            style={styles.profileImage}
-                        />
-                        <Text style={styles.titlesTitle}>Nicholas Halim</Text>
-                        <Text style={styles.titlesSubtitle}>CORPORAL</Text>
-                        <TouchableOpacity
-                            onPress={handleSignOut}
-                            style={styles.button}
-                        >
-                            <Text style={styles.buttonText}>Personal Details</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            onPress={handleSignOut}
-                            style={styles.button}
-                        >
-                            <Text style={styles.buttonText}>Medical Status</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            onPress={handleSignOut}
-                            style={styles.button}
-                        >
-                            <Text style={styles.buttonText}>Apply for Deferment</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            onPress={handleSignOut}
-                            style={styles.button}
-                        >
-                            <Text style={styles.buttonText}>Sign out</Text>
-                        </TouchableOpacity>
-                    </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={handleSignOut}
+                        style={styles.button}
+                    >
+                        <Text style={styles.buttonText}>Apply for Deferment</Text>
+                        <Feather name="chevron-right" size={18} color={colors.white} />
+
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={handleSignOut}
+                        style={styles.button}
+                    >
+                        <Text style={styles.buttonText}>Sign out</Text>
+                        <Feather name="chevron-right" size={18} color={colors.white} />
+
+                    </TouchableOpacity>
+                </View>
             </SafeAreaView>
 
         </View>
@@ -116,16 +121,13 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     header: {
-        width: 320,
-        top: 80,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+        marginBottom: 50,
+        marginTop: 80,
     },
     title: {
-        position: 'relative',
-        top: -5,
-        left: -65,
         fontSize: 32,
         fontWeight: 'bold',
         textAlign: 'center',
@@ -139,11 +141,11 @@ const styles = StyleSheet.create({
         alignItems: 'right',
     },
     profileImage: {
-        width: 150,
-        height: 150,
+        width: 160,
+        height: 160,
         borderRadius: 100,
         marginLeft: 10,
-        marginTop: 10,
+        top: 10,
         borderWidth: 5,
         borderColor: colors.grey,
     },
@@ -157,7 +159,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: '600',
         color: colors.textGrey,
-        marginBottom: 80,
+        marginBottom: 50,
     },
     titlesTitle: {
         // fontFamily: 'Montserrat-Bold',
@@ -189,7 +191,8 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         // fontFamily: 'Montserrats-Bold',
-        fontSize: 20,
+        fontSize: 18,
+        fontWeight: '600',
         textAlign: 'center',
         color: colors.white
     },

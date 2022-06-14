@@ -41,7 +41,7 @@ const HomeScreenMan = ({ navigation, user }) => {
       <SafeAreaView>
         <ScrollView>
 
-          <View style={styles.headerWrapper}>
+        <View style={styles.headerWrapper}>
             {/* Header */}
             <Image 
               source={require('../../../assets/images/header.png')}
@@ -49,12 +49,12 @@ const HomeScreenMan = ({ navigation, user }) => {
             />
             <View>
               <View style={styles.titlesWrapper}>
-              <Feather name="menu" size={24} color={colors.white} />
-                  <Text style={styles.titlesSubtitle}>Hello, CPL Nicholas</Text>
+                <Text style={styles.titlesSubtitle}>Hello,</Text>
+                <Text style={styles.titlesSubtitle}>CPL Nicholas</Text>
               </View>
             </View>
             <Image 
-              source={require('../../../assets/images/dp.png')}
+              source={require('../../../assets/images/nic.jpg')}
               style={styles.profileImage}
             />
           </View>
