@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     color: colors.white,
     marginTop: 20,
   },
-  orderWrapper: {
+  button: {
     marginTop: 60,
     marginHorizontal: 20,
     backgroundColor: colors.primary,
@@ -198,10 +198,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     textAlign: 'center'
   },
-  buttonGrid: {
-    marginTop: 10,
-    flexDirection: 'column',
-  },
+
   buttonRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
