@@ -23,7 +23,7 @@ const LoginScreen = () => {
         const auth = getAuth();
         onAuthStateChanged(auth, (user) => {
             if (user) {
-            navigation.replace("Home")
+            navigation.replace("HomeCom")
             }
         });
     
