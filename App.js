@@ -1,5 +1,4 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 import PackingList from './components/pages/PackingList/PackingList';
 import Schedule from './components/pages/Schedule/Schedule';
 import { NavigationContainer } from '@react-navigation/native';
@@ -8,7 +7,6 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { StyleSheet, Text, View } from 'react-native';
 import CreateBroadcastScreen from './components/pages/CreateBroadcast/CreateBroadcast';
 import LoginScreen from './components/pages/LoginScreen/LoginScreen';
-import HomeScreen from './components/pages/LoginScreen/HomeScreen';
 import * as React from 'react';
 import HomeScreenCom from './components/pages/Home-Commander/Home-Com';
 import HomeScreenMan from './components/pages/Home-Man/Home-Man';
@@ -38,6 +36,10 @@ function App() {
         <Stack.Screen
           name="CreateBroadcast"
           component={CreateBroadcastScreen}
+          options={{headerShown: false,}}/>
+        <Stack.Screen
+          name="PackingList"
+          component={PackingList}
           options={{headerShown: false,}}/>
 
       </Stack.Navigator>

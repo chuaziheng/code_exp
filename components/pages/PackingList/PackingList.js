@@ -1,41 +1,9 @@
 import * as React from 'react';
-import { View, Text, StyleSheet, KeyboardAvoidingView, TextInput, Platform, Keyboard, Linking, TouchableOpacity, ScrollView} from 'react-native';
+import { View, Text, Dimensions, StyleSheet, KeyboardAvoidingView, TextInput, Platform, Keyboard, Linking, TouchableOpacity, ScrollView } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import Item from './Item';
 
-// const items = [
-//     {
-//         id: '1',
-//         desc: 'Fieldpack',
-//         packed: false,
-//     },
-
-//     {
-//         id: '2',
-//         desc: 'Helmet',
-//         packed: false,
-//     },
-
-//     {
-//         id: '3',
-//         desc: 'Towel Pack',
-//         packed: false,
-//     },
-
-//     {
-//         id: '4',
-//         desc: 'Toiletries',
-//         packed: false,
-//     },
-
-//     {
-//         id: '5',
-//         desc: 'Mess Tin Pack',
-//         packed: false,
-//     },
-// ]
-
-const PackingList = () => {
+const PackingList = ({ navigation, route }) => {
     const [item, setItem] = React.useState();
     const [Itemlist, setItemlist] = React.useState([]);
 
@@ -57,38 +25,44 @@ const PackingList = () => {
                 }}
                 keyboardShouldPersistTaps='handled'
             ></ScrollView> */}
-                <View style={styles.header}>
-                    <View style={styles.backbutton}> 
-                        <Feather name='chevron-left' size={18} color={'black'}/>
+            <View style={styles.header}>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <View style={styles.backbutton} >
+                        <Feather name='chevron-left' size={18} color={'black'} />
                     </View>
-                    <Text style={styles.title}>Packing List</Text>
-                </View>
-                <View style={styles.items}>
-                    {
-                        Itemlist.map((item, index) => {
-                                return <Item id={index} desc={item}/>
-                            })
-                    }
-                    <KeyboardAvoidingView 
-                        behavior={Platform.OS === "ios" ? "padding" : "height"} 
+                </TouchableOpacity>
+
+                <Text style={styles.title}>Packing List</Text>
+            </View>
+            <View style={styles.items}>
+                {
+                    Itemlist.map((item, index) => {
+                        return <Item id={index} desc={item} />
+                    })
+                }
+                
+
+            </View>
+            <View style={styles.footer}>
+                <KeyboardAvoidingView
+                        behavior={Platform.OS === "ios" ? "padding" : "height"}
                         style={styles.addItemWrapper}
-                        >
-                        <TextInput style={styles.input} placeholder={'Add an Item'} value={item} onChangeText= {text => setItem(text)} />
+                    >
+                        <TextInput style={styles.input} placeholder={'Add an Item'} value={item} onChangeText={text => setItem(text)} />
                         <TouchableOpacity onPress={() => handleAddItem()}>
                             <Text style={styles.Add}>Add</Text>
                         </TouchableOpacity>
                     </KeyboardAvoidingView>
-
-                </View>
                 <TouchableOpacity onPress={() => openEmart()}>
                     <Text style={styles.Emart}>
                         Browse Emart
                     </Text>
                 </TouchableOpacity>
-                    
+            </View>
 
-                
-            
+
+
+
         </View>
     );
 }
@@ -108,8 +82,15 @@ const styles = StyleSheet.create({
     header: {
         width: 320,
         flexDirection: 'row',
-        justifyContent:'space-between',
+        justifyContent: 'space-between',
         alignItems: 'center',
+    },
+
+    footer: {
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        height: 30,
     },
 
     backbutton: {
@@ -137,12 +118,13 @@ const styles = StyleSheet.create({
 
     items: {
         backgroundColor: '#F5F5F5',
-        height: 448,
-        width: 331,
+        height: 650,
+        width: Dimensions.get('window').width * 0.9,
         flexDirection: 'column',
         alignItems: 'center',
         paddingTop: 10,
         borderRadius: 10,
+        overflow: 'scroll'
     },
 
     Add: {
@@ -180,8 +162,8 @@ const styles = StyleSheet.create({
     },
 
     addItemWrapper: {
-        position: 'absolute',
-        bottom: 10,
+        // position: 'absolute',
+        // bottom: 10,
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-around',
@@ -197,4 +179,4 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         width: 250,
     },
-  });
+});

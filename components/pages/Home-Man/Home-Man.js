@@ -68,7 +68,7 @@ const HomeScreenMan = ({ navigation, user }) => {
               
               <View style={styles.buttonRow}>
                   <QuickButton navigation={navigation} title={'SCHEDULER'} nextPage={'HomeMan'} icon={'Schedule.png'}/>
-                  <QuickButton navigation={navigation} title={'PACKING LIST'} nextPage={'HomeMan'} icon={'Storage Box.png'}/>
+                  <QuickButton navigation={navigation} title={'PACKING LIST'} nextPage={'PackingList'} icon={'Storage Box.png'}/>
                   <QuickButton navigation={navigation} title={'DUTY ROSTER'} nextPage={'HomeMan'} icon={'Move Dirt Around.png'} />
                   <QuickButton navigation={navigation} title={'ORG CHART'} nextPage={'HomeMan'} icon={'User Menu Male.png'}/>
                   <QuickButton navigation={navigation} title={'PROFILE'} nextPage={'PersonalData'} icon={'Account.png'}/>
