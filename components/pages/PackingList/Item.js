@@ -3,13 +3,18 @@ import { View, Text, StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native-web';
 
 const Item = ({
-    // id,
+    id,
     desc
 }) => {
     const [packed, setPacked] = React.useState(false)
+    const [deleted, setDeleted] = React.useState(false)
 
     const handleClick = (packed) => {
         setPacked(!packed)
+    }
+
+    const handleDelete = (deleted) => {
+        setDeleted(!deleted)
     }
 
     return (
@@ -17,10 +22,14 @@ const Item = ({
         <TouchableOpacity onPress={() =>
             handleClick(packed)
         }>
-        <View style={packed ? styles.mainpacked : styles.main}>
+        <View style={deleted ? styles.deleted : (packed ? styles.mainpacked : styles.main)}>
             <View style={styles.item}>
                 <View style={packed ? styles.circle : styles.circlepacked}></View>
                 <Text style={packed ? styles.textpacked : styles.text}> {desc}</Text>
+                <TouchableOpacity onPress={() =>
+                    handleDelete(deleted)
+                }>
+                </TouchableOpacity>
             </View>
         </View>
         </TouchableOpacity>
@@ -78,6 +87,12 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
 
+    deleted: {
+        padding: 0,
+        borderRadius: 0,
+        width: 0,
+        marginBottom: 0,
+    }
 });
 
 export default Item;

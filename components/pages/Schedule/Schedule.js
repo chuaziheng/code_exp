@@ -35,7 +35,7 @@ const items = [
     },
 ]
 
-const PackingList = () => {
+const Schedule = () => {
     return (
         <View style={styles.main}>
                 <View style={styles.header}>
@@ -47,7 +47,7 @@ const PackingList = () => {
                 <View style={styles.items}>
                     {
                         items.map((i) => (
-                            <Item id ={i.id} desc={i.desc}/>
+                            <Period id ={i.id} desc={i.desc}/>
                         ))
                     }
 
@@ -65,7 +65,7 @@ const PackingList = () => {
     );
 }
 
-export default PackingList;
+export default Schedule;
 
 const styles = StyleSheet.create({
     main: {

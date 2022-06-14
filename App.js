@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import PackingList from './components/pages/PackingList/PackingList';
+import Schedule from './components/pages/Schedule/Schedule';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from './components/pages/LoginScreen/LoginScreen';
@@ -17,7 +18,6 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen options={{headerShown:false}} name="Login" component={LoginScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen 
           name="HomeCom" 
           component={HomeScreenCom} 

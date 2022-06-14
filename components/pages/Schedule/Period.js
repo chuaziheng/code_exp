@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native-web';
 
-const Item = ({
+const Period = ({
     // id,
     desc
 }) => {
