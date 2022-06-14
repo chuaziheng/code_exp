@@ -197,10 +197,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     textAlign: 'center'
   },
-  buttonGrid: {
-    marginTop: 10,
-    flexDirection: 'column',
-  },
+
   buttonRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',

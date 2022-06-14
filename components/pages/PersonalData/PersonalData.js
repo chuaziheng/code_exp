@@ -39,39 +39,49 @@ const PersonalData = ({ navigation, user }) => {
         <View style={styles.container}>
 
             <SafeAreaView>
-                <ScrollView>
-                    <Image
-                        source={require('../../../assets/images/header.png')}
-                        style={styles.headerImg}
-                    />
-                    <View style={styles.headerWrapper}>
-                        {/* Header */}
-                        
-                        <View>
-                            <View style={styles.titlesWrapper}>
-                                <Feather name="menu" size={24} color={colors.white} />
-                                <Text style={styles.titlesSubtitle}>Hello, CPL Nicholas</Text>
+
+                    <View style={styles.header}>
+                        <TouchableOpacity onPress={() => navigation.goBack()}>
+                            <View style={styles.backbutton} >
+                                <Feather name='chevron-left' size={18} color={'black'} />
                             </View>
-                        </View>
+                        </TouchableOpacity>
+
+                        <Text style={styles.title}>Profile</Text>
+                    </View>
+
+                    <View style={styles.body}>
                         <Image
                             source={require('../../../assets/images/dp.png')}
                             style={styles.profileImage}
                         />
+                        <Text style={styles.titlesTitle}>Nicholas Halim</Text>
+                        <Text style={styles.titlesSubtitle}>CORPORAL</Text>
+                        <TouchableOpacity
+                            onPress={handleSignOut}
+                            style={styles.button}
+                        >
+                            <Text style={styles.buttonText}>Personal Details</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={handleSignOut}
+                            style={styles.button}
+                        >
+                            <Text style={styles.buttonText}>Medical Status</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={handleSignOut}
+                            style={styles.button}
+                        >
+                            <Text style={styles.buttonText}>Apply for Deferment</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={handleSignOut}
+                            style={styles.button}
+                        >
+                            <Text style={styles.buttonText}>Sign out</Text>
+                        </TouchableOpacity>
                     </View>
-
-                    {/* Today View */}
-                    <View style={styles.header}></View>
-                    <View style={styles.bodyWrapper}>
-                        <View>
-                            <TouchableOpacity
-                                onPress={handleSignOut}
-                                style={styles.button}
-                            >
-                                <Text style={styles.orderWrapper}>Sign out</Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                </ScrollView>
             </SafeAreaView>
 
         </View>
@@ -81,33 +91,46 @@ const PersonalData = ({ navigation, user }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#5E7667",
-        // backgroundColor: colors.white
-        overflow: 'scroll'
+        backgroundColor: colors.white,
     },
     topheader: {
         flexDirection: 'row'
     },
-    headerImg: {
-        height: 200,
-        // backgroundColor: colors.white,
-        width: '100%',
-        position: 'absolute',
+    backbutton: {
+        position: 'relative',
         top: 0,
         left: 0,
-        borderTopEndRadius: 20,
-        borderTopStartRadius: 20,
+        height: 30,
+        width: 30,
+        borderRadius: 10,
+        borderColor: 'grey',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+    },
+    body: {
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100%'
     },
     header: {
-        height: '80%',
-        backgroundColor: colors.white,
-        width: '100%',
-        position: 'absolute',
-        top: 205,
-        left: 0,
-        borderTopEndRadius: 20,
-        borderTopStartRadius: 20,
+        width: 320,
+        top: 80,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
     },
+    title: {
+        position: 'relative',
+        top: -5,
+        left: -65,
+        fontSize: 32,
+        fontWeight: 'bold',
+        textAlign: 'center',
+    },
+
     headerWrapper: {
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -116,26 +139,31 @@ const styles = StyleSheet.create({
         alignItems: 'right',
     },
     profileImage: {
-        width: 50,
-        height: 50,
-        borderRadius: 40,
+        width: 150,
+        height: 150,
+        borderRadius: 100,
         marginLeft: 10,
         marginTop: 10,
+        borderWidth: 5,
+        borderColor: colors.grey,
     },
     titlesWrapper: {
-        marginLeft: 5,
+        marginLeft: 10,
+        marginTop: 10,
         paddingHorizontal: 0,
     },
     titlesSubtitle: {
         // fontFamily: 'Montserrat-Regular',
-        fontSize: 25,
+        fontSize: 20,
         fontWeight: '600',
-        color: colors.white,
+        color: colors.textGrey,
+        marginBottom: 80,
     },
     titlesTitle: {
         // fontFamily: 'Montserrat-Bold',
-        fontSize: 32,
-        color: colors.white,
+        marginTop: 10,
+        fontSize: 30,
+        color: colors.textDark,
         fontWeight: '600'
     },
     bodyWrapper: {
@@ -159,9 +187,17 @@ const styles = StyleSheet.create({
         color: colors.white,
         marginTop: 20,
     },
-    orderWrapper: {
-        marginTop: 60,
+    buttonText: {
+        // fontFamily: 'Montserrats-Bold',
+        fontSize: 20,
+        textAlign: 'center',
+        color: colors.white
+    },
+    button: {
+        marginTop: 10,
         marginHorizontal: 20,
+        width: Dimensions.get('window').width * 0.9,
+        height: 70,
         backgroundColor: colors.primary,
         borderRadius: 50,
         paddingVertical: 25,
@@ -169,33 +205,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    orderText: {
-        // fontFamily: 'Montserrats-Bold',
-        fontSize: 14,
-        marginRight: 10,
-        textAlign: 'center'
-    },
-    buttonGrid: {
-        marginTop: 10,
-        flexDirection: 'column',
-    },
-    buttonRow: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        overflow: 'scroll',
-        width: Dimensions.get('window').width * 0.9,
-        marginBottom: 25,
-    },
-    Add: {
-        color: colors.textAccent,
-        fontSize: 25,
-        marginTop: 15,
-    },
-    textWrapper: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-    }
 });
 
 export default PersonalData;
