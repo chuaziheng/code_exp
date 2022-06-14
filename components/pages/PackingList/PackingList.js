@@ -19,12 +19,6 @@ const PackingList = ({ navigation, route }) => {
 
     return (
         <View style={styles.main}>
-            {/* <ScrollView 
-                contentContainerStyle={{
-                    flexGrow: 1
-                }}
-                keyboardShouldPersistTaps='handled'
-            ></ScrollView> */}
             <View style={styles.header}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <View style={styles.backbutton} >
@@ -40,8 +34,6 @@ const PackingList = ({ navigation, route }) => {
                         return <Item id={index} desc={item} />
                     })
                 }
-                
-
             </View>
             <View style={styles.footer}>
                 <KeyboardAvoidingView
@@ -59,9 +51,6 @@ const PackingList = ({ navigation, route }) => {
                     </Text>
                 </TouchableOpacity>
             </View>
-
-
-
 
         </View>
     );
@@ -139,6 +128,7 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
         marginTop: 10,
+        marginLeft: 10,
         marginBottom: 10,
         paddingTop: 10,
         borderRadius: 10,
