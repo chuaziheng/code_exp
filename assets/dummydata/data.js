@@ -9,7 +9,7 @@ export const scheduleData = [
       id: '2',
       time: '0730',
       task: 'BREAKFAST',
-      venue: 'COOKHOUSE 1',
+      venue: 'CH 1',
     },
     {
       id: '3',

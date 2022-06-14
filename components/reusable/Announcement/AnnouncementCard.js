@@ -21,9 +21,8 @@ const AnnouncementCard = () => {
                         announcementData.map((item) => (
                             <AnnouncementItem 
                                 key={item.id}
-                                time={item.time}
-                                task={item.task}
-                                venue={item.venue}
+                                title={item.title}
+                                author={item.author}
                                 />
                         ))
                     }
@@ -46,10 +45,10 @@ const styles = StyleSheet.create({
         backgroundColor: colors.grey,
         borderRadius: 15,
         width: Dimensions.get('window').width * 0.9,
-        height: 230,
+        height: 160,
         paddingVertical: 10,
         paddingHorizontal: 20,
-        overflow: 'scroll',
+        overflow: 'hidden',
         shadowColor: colors.black,
         shadowOffset: {
             width: 0,

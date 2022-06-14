@@ -1,5 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { StyleSheet, Text, View } from 'react-native';
 import CreateBroadcastScreen from './components/pages/CreateBroadcast/CreateBroadcast';
 import LoginScreen from './components/pages/LoginScreen/LoginScreen';
@@ -7,9 +8,11 @@ import HomeScreen from './components/pages/LoginScreen/HomeScreen';
 import * as React from 'react';
 import HomeScreenCom from './components/pages/Home-Commander/Home-Com';
 import HomeScreenMan from './components/pages/Home-Man/Home-Man';
+import PersonalData from './components/pages/PersonalData/PersonalData';
 
 
 const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
 function App() {
   return (
@@ -25,11 +28,30 @@ function App() {
           component={HomeScreenMan}
           options={{headerShown: false,}}/>
         <Stack.Screen
+          name="PersonalData"
+          component={PersonalData}
+          options={{headerShown: false,}}/>
+        <Stack.Screen
           name="CreateBroadcast"
           component={CreateBroadcastScreen}
           options={{headerShown: false,}}/>
 
       </Stack.Navigator>
+      {/* <Drawer.Navigator
+        drawerType="front"
+        initialRouteName="HomeCom"
+        drawerContentOptions={{
+          activeTintColor: '#e91e63',
+          itemStyle: { marginVertical: 10 },
+        }}
+
+      >
+        {
+         DrawerItems.map(drawer=><Drawer.Screen
+           key={drawer.name}
+         />)
+       }
+      </Drawer.Navigator> */}
     </NavigationContainer>
   );
 }

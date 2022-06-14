@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         // fontFamily: 'Montserrat-Bold',
         color: colors.textAccent,
         fontSize: 16,
-        width: 110,
+        width: 80,
         fontWeight: '500',
         textAlign: 'center'
     },
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
         backgroundColor: colors.white,
         borderRadius: 10,
-        width: 350,
+        width: Dimensions.get('window').width * 0.85,
         height: 60,
         paddingVertical: 5,
         paddingHorizontal: 20,
