@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         height: 230,
         paddingVertical: 10,
         paddingHorizontal: 20,
-        overflow: 'scroll',
+        overflow: 'hidden',
         shadowColor: colors.black,
         shadowOffset: {
             width: 0,

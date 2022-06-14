@@ -80,11 +80,13 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: 'white',
         opacity: 0.8,
+        overflow: 'hidden'
     },
 
     text: {
         fontStyle: 'Lato',
         fontSize: 16,
+        overflow: 'hidden'
     },
 
     deleted: {

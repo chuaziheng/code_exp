@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
 // import categoriesData from '../assets/data/categoriesData';
 // import popularData from '../assets/data/popularData';
 import colors from '../../../assets/colors/colors';
@@ -43,10 +43,15 @@ const HomeScreenCom = ({ navigation, user }) => {
 
           <View style={styles.headerWrapper}>
             {/* Header */}
-            <View style={styles.header}> </View>
-            <View style={styles.titlesWrapper}>
-                <Text style={styles.titlesSubtitle}>Hello,</Text>
-                <Text style={styles.titlesTitle}>MAJ Jo</Text>
+            <Image 
+              source={require('../../../assets/images/header.png')}
+              style={styles.headerImg}
+            />
+            <View>
+              <View style={styles.titlesWrapper}>
+              <Feather name="menu" size={24} color={colors.white} />
+                  <Text style={styles.titlesSubtitle}>Hello, MAJ Josephine</Text>
+              </View>
             </View>
             <Image 
               source={require('../../../assets/images/dp.png')}
@@ -55,33 +60,38 @@ const HomeScreenCom = ({ navigation, user }) => {
           </View>
 
           {/* Today View */}
+          <View style={styles.header}></View>
           <View style={styles.bodyWrapper}>
             <View>
+              
+              {/* <Text style={styles.bodyTitleWhite}>Quick Actions</Text> */}
+              
+              <View style={styles.buttonRow}>
+                  <QuickButton navigation={navigation} title={'SCHEDULER'} nextPage={'HomeMan'} icon={'Schedule.png'}/>
+                  <QuickButton navigation={navigation} title={'PACKING LIST'} nextPage={'PackingList'} icon={'Storage Box.png'}/>
+                  <QuickButton navigation={navigation} title={'BROADCAST'} nextPage={'CreateBroadcast'} icon={'Megaphone.png'} />
+                  <QuickButton navigation={navigation} title={'DUTY ROSTER'} nextPage={'HomeMan'} icon={'Move Dirt Around.png'} />
+                  <QuickButton navigation={navigation} title={'ORG CHART'} nextPage={'HomeMan'} icon={'User Menu Male.png'}/>
+                  <QuickButton navigation={navigation} title={'PROFILE'} nextPage={'PersonalData'} icon={'Account.png'}/>
+              </View>
+                          
               <Text style={styles.bodyTitle}>What's happening next?</Text>
               <ScheduleCard/>
-              <Text style={styles.bodyTitle}>Quick Actions</Text>
-              <View style={styles.buttonGrid}>
-                <View style={styles.buttonRow}>
-                  <QuickButton navigation={navigation} title={'Scheduler'} nextPage={'HomeMan'} />
-                  <QuickButton navigation={navigation} title={'Nominal Roll'} nextPage={'HomeMan'} />
-                  <QuickButton navigation={navigation} title={'Broadcast'} nextPage={'HomeMan'} />
-                </View>
-                <View style={styles.buttonRow}>
-                  <QuickButton navigation={navigation} title={'Packing List'} nextPage={'HomeMan'} />
-                  <QuickButton navigation={navigation} title={'Personal Data'} nextPage={'HomeMan'} />
-                  <QuickButton navigation={navigation} title={'Duty Roster'} nextPage={'HomeMan'} />
-                </View>
-
+              <View style={styles.textWrapper}>
+                <Text style={styles.bodyTitle}>Announcements</Text>
                 <TouchableOpacity
+                  // onPress={() => navigation.navigate()}
+                >
+                  <Text style={styles.Add}>+</Text>
+                </TouchableOpacity>
+              </View>
+              <AnnouncementCard />
+              <TouchableOpacity
                   onPress={handleSignOut}
                   style={styles.button}
                 >
                   <Text style={styles.orderWrapper}>Sign out</Text>
                 </TouchableOpacity>
-                
-              </View>
-              <Text style={styles.bodyTitle}>Announcements</Text>
-              <AnnouncementCard />
             </View>
           </View>
         </ScrollView>
@@ -94,18 +104,32 @@ const HomeScreenCom = ({ navigation, user }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: "#5E7667",
+    // backgroundColor: colors.white
     overflow: 'scroll'
   },
-  header: {
+  topheader: {
+    flexDirection: 'row'
+  },
+  headerImg: {
     height: 200,
-    backgroundColor: colors.lightgreen,
+    // backgroundColor: colors.white,
     width: '100%',
     position: 'absolute',
     top: 0,
     left: 0,
-    borderBottomEndRadius: 15,
-    borderBottomStartRadius: 15,
+    borderTopEndRadius: 20,
+    borderTopStartRadius: 20,
+  },
+  header: {
+    height: '80%',
+    backgroundColor: colors.white,
+    width: '100%',
+    position: 'absolute',
+    top: 205,
+    left: 0,
+    borderTopEndRadius: 20,
+    borderTopStartRadius: 20,
   },
   headerWrapper: {
     flexDirection: 'row',
@@ -115,8 +139,8 @@ const styles = StyleSheet.create({
     alignItems: 'right',
   },
   profileImage: {
-    width: 60,
-    height: 60,
+    width: 50,
+    height: 50,
     borderRadius: 40,
     marginLeft: 10,
     marginTop: 10,
@@ -129,12 +153,12 @@ const styles = StyleSheet.create({
     // fontFamily: 'Montserrat-Regular',
     fontSize: 25,
     fontWeight: '600',
-    color: colors.textDark,
+    color: colors.white,
   },
   titlesTitle: {
     // fontFamily: 'Montserrat-Bold',
     fontSize: 32,
-    color: colors.textDark,
+    color: colors.white,
     fontWeight: '600'
   },
   bodyWrapper: {
@@ -146,9 +170,16 @@ const styles = StyleSheet.create({
   },
   bodyTitle: {
     // fontFamily: 'Montserrat-Regular',
-    fontSize: 23,
+    fontSize: 20,
     fontWeight: '600',
     color: colors.textDark,
+    marginTop: 20,
+  },
+  bodyTitleWhite: {
+    // fontFamily: 'Montserrat-Regular',
+    fontSize: 20,
+    fontWeight: '600',
+    color: colors.white,
     marginTop: 20,
   },
   orderWrapper: {
@@ -165,6 +196,7 @@ const styles = StyleSheet.create({
     // fontFamily: 'Montserrats-Bold',
     fontSize: 14,
     marginRight: 10,
+    textAlign: 'center'
   },
   buttonGrid: {
     marginTop: 10,
@@ -172,7 +204,20 @@ const styles = StyleSheet.create({
   },
   buttonRow: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
+    overflow: 'scroll',
+    width: Dimensions.get('window').width * 0.9,
+    marginBottom: 25,
+  },
+  Add: {
+    color: colors.textAccent,
+    fontSize: 25,
+    marginTop: 15,
+  },
+  textWrapper: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
   }
 });
 

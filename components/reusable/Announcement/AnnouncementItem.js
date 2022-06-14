@@ -14,7 +14,7 @@ const AnnouncementItem = ({
               source={require('../../../assets/images/dp.png')}
               style={styles.profileImage}
             />
-            <View style={styles.texts}>
+            <View style={styles.textWrapper}>
                 <Text style={styles.titleText}>
                     {title}
                 </Text>
@@ -31,27 +31,30 @@ export default AnnouncementItem;
 const styles = StyleSheet.create({
     titleText: {
         // fontFamily: 'Montserrat-Bold',
-        color: colors.textAccent,
-        fontSize: 16,
-        width: 50,
+        color: colors.textDark,
+        fontSize: 15,
         fontWeight: '500',
     },
     authorText: {
         // fontFamily: 'Montserrat-Bold',
-        color: colors.textAccent,
-        fontSize: 16,
-        width: 110,
+        color: colors.textGrey,
+        fontSize: 13,
         fontWeight: '500',
-        textAlign: 'center'
+    },
+    textWrapper: {
+        flexDirection: 'column',
+        justifyContent: 'center',
+        width: 200,
+        marginLeft: 20,
     },
     ItemWrapper: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        // justifyContent: 'center',
         alignItems: 'center',
         marginTop: 10,
         backgroundColor: colors.white,
         borderRadius: 10,
-        width: 350,
+        width: Dimensions.get('window').width * 0.85,
         height: 60,
         paddingVertical: 5,
         paddingHorizontal: 20,
@@ -70,8 +73,6 @@ const styles = StyleSheet.create({
         width: 40,
         height: 40,
         borderRadius: 40,
-        marginLeft: 10,
-        marginTop: 10,
         borderColor: colors.grey,
         borderWidth: 2,
       },
