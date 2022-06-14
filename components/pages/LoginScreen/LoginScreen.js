@@ -17,7 +17,7 @@ import {
     orderBy, serverTimestamp,
     updateDoc
 } from 'firebase/firestore'
-// import { signInWithGoogle } from '../../../index'
+import colors from '../../../assets/colors/colors';
 
 
 const LoginScreen = () => {
@@ -63,31 +63,6 @@ const LoginScreen = () => {
         // return unsubscribe
     }, [])
 
-    const handleGoogleSignIn = () => {
-        const auth = getAuth();
-        const provider = new GoogleAuthProvider();
-
-        signInWithPopup(auth, provider)
-            .then((result) => {
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const token = credential.accessToken;
-                // The signed-in user info.
-                const user = result.user;
-                console.log('Google Sign in with: ', user.email)
-                // ...
-            }).catch((error) => {
-                // Handle Errors here.
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // The email of the user's account used.
-                const email = error.customData.email;
-                // The AuthCredential type that was used.
-                const credential = GoogleAuthProvider.credentialFromError(error);
-                // ...
-            });
-    }
-
   
     const handleSignUp = () => {
         const auth = getAuth();
@@ -119,12 +94,11 @@ const LoginScreen = () => {
             style={styles.container}
             behavior="padding"
         >
-            <View style={styles.buttonContainer}>
+            <View style={styles.topButtonContainer}>
             <TouchableOpacity
-                onPress={handleGoogleSignIn}
-                style={styles.button}
+                style={styles.singpassButton}
             >
-                <Text style={styles.buttonText}>Sign in with Google</Text>
+                <Text style={styles.buttonText}>Sign in with Signpass</Text>
             </TouchableOpacity>
             </View>
             <View style={styles.inputContainer}>
@@ -166,6 +140,7 @@ const LoginScreen = () => {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
+      backgroundColor: "#5E7667",
       justifyContent: 'center',
       alignItems: 'center',
     },
@@ -179,23 +154,40 @@ const LoginScreen = () => {
       borderRadius: 10,
       marginTop: 5,
     },
+    topButtonContainer: {
+        width: '60%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 40,
+        paddingHorizontal: 15,
+        paddingVertical: 30
+    },
     buttonContainer: {
       width: '60%',
       justifyContent: 'center',
       alignItems: 'center',
       marginTop: 40,
     },
-    button: {
-      backgroundColor: '#0782F9',
+    singpassButton: {
+      backgroundColor: '#AD1019',
+    //   backgroundColor: colors.primary,
       width: '100%',
       padding: 15,
       borderRadius: 10,
       alignItems: 'center',
     },
+    button: {
+        // backgroundColor: '#AD1019',
+        backgroundColor: colors.primary,
+        width: '100%',
+        padding: 15,
+        borderRadius: 10,
+        alignItems: 'center',
+      },
     buttonOutline: {
       backgroundColor: 'white',
       marginTop: 5,
-      borderColor: '#0782F9',
+      borderColor: "#5E7667",
       borderWidth: 2,
     },
     buttonText: {
@@ -204,7 +196,7 @@ const LoginScreen = () => {
       fontSize: 16,
     },
     buttonOutlineText: {
-      color: '#0782F9',
+      color: colors.primary,
       fontWeight: '700',
       fontSize: 16,
     },
