@@ -4,7 +4,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import colors from '../../../assets/colors/colors';
 import ScheduleItem from './ScheduleItem';
-import scheduleData from '../../../assets/dummydata/data';
+import { scheduleData } from '../../../assets/dummydata/data';
 
 const ScheduleCard = () => {
     return (
@@ -16,7 +16,7 @@ const ScheduleCard = () => {
             //       item: item,
             //     })
               >
-                <View style={styles.popularCardWrapper}>
+                <View>
                     {
                         scheduleData.map((item) => (
                             <ScheduleItem 
@@ -27,7 +27,6 @@ const ScheduleCard = () => {
                                 />
                         ))
                     }
-            
                 </View>
             </TouchableOpacity>
         </View>
@@ -39,10 +38,6 @@ export default ScheduleCard;
 
 
 const styles = StyleSheet.create({
-    popularTitle: {
-        // fontFamily: 'Montserrat-Bold',
-        fontSize: 16,
-    },
     scheduleCardWrapper: {
         flexDirection: 'column',
         justifyContent: 'flex-start',
@@ -64,34 +59,5 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
         elevation: 2,
         
-    },
-    popularTopWrapper: {
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    popularTopText: {
-        marginLeft: 10,
-        // fontFamily: 'Montserrat-SemiBold',
-        fontSize: 14,
-    },
-    popularTitlesWrapper: {
-        marginTop: 20,
-    },
-    popularTitlesTitle: {
-        // fontFamily: 'Montserrat-SemiBold',
-        fontSize: 14,
-        // color: colors.textDark,
-    },
-    popularTitlesWeight: {
-        // fontFamily: 'Montserrat-Medium',
-        fontSize: 12,
-        // color: colors.textLight,
-        marginTop: 5,
-    },
-    popularCardBottom: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginTop: 10,
-        marginLeft: -20,
     },
 });
