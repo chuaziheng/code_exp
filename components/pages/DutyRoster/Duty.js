@@ -20,7 +20,7 @@ const Duty = ({
             {/* <View style={packed ? styles.circle : styles.circlepacked}></View> */}
             <Text style={styles.startTimeText}> {startTime}</Text>
             <Text style={styles.personnelText}> {personnel}</Text>
-            <Text style={styles.dutyStatusText}> {dutyStatus}</Text>
+            <Text style={styles.dutyStatus}> {dutyStatus}</Text>
         </View>
     ) 
 }
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
         // fontFamily: 'Montserrat-Bold',
         color: colors.textAccent,
         fontSize: 16,
-        width: 80,
+        width: 90,
         fontWeight: '500',
         textAlign: 'center'
     },

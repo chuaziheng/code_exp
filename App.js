@@ -15,6 +15,8 @@ import HomeScreenMan from './components/pages/Home-Man/Home-Man';
 import PersonalData from './components/pages/PersonalData/PersonalData';
 import DutyRoster from './components/pages/DutyRoster/DutyRoster'
 import Schedule from './components/pages/Schedule/Schedule';
+import ScheduleMan from './components/pages/Schedule/ScheduleMan';
+import PersonalDataMan from './components/pages/PersonalData/PersonalDataMan';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -37,6 +39,10 @@ function App() {
           component={PersonalData}
           options={{headerShown: false,}}/>
         <Stack.Screen
+          name="PersonalDataMan"
+          component={PersonalDataMan}
+          options={{headerShown: false,}}/>
+        <Stack.Screen
           name="CreateBroadcast"
           component={CreateBroadcastScreen}
           options={{headerShown: false,}}/>
@@ -52,22 +58,11 @@ function App() {
           name="Schedule"
           component={Schedule}
           options={{headerShown: false,}}/>
+          <Stack.Screen
+          name="ScheduleMan"
+          component={ScheduleMan}
+          options={{headerShown: false,}}/>
       </Stack.Navigator>
-      {/* <Drawer.Navigator
-        drawerType="front"
-        initialRouteName="HomeCom"
-        drawerContentOptions={{
-          activeTintColor: '#e91e63',
-          itemStyle: { marginVertical: 10 },
-        }}
-
-      >
-        {
-         DrawerItems.map(drawer=><Drawer.Screen
-           key={drawer.name}
-         />)
-       }
-      </Drawer.Navigator> */}
     </NavigationContainer>
   );
 }

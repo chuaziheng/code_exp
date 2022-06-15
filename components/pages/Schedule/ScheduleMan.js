@@ -5,7 +5,7 @@ import { scheduleData } from '../../../assets/dummydata/data';
 import ScheduleItem from '../../reusable/Schedule/ScheduleItem';
 
 
-const Schedule = ({navigation}) => {
+const ScheduleMan = ({navigation}) => {
     return (
         <View style={styles.main}>
                 <View style={styles.header}>
@@ -30,14 +30,11 @@ const Schedule = ({navigation}) => {
                     }
 
                 </View>
-                <TouchableOpacity>
-                    <Text style={styles.submitButton}>Add Schedule</Text>
-                </TouchableOpacity>
         </View>
     );
 }
 
-export default Schedule;
+export default ScheduleMan;
 
 const styles = StyleSheet.create({
     main: {

@@ -39,7 +39,7 @@ export default DutyRoster;
 const styles = StyleSheet.create({
     main: {
         flex: 1,
-        backgroundColor: colors.lightgreen,
+        backgroundColor: colors.white,
         paddingTop: 80,
         paddingHorizontal: 20,
         flexDirection: 'column',

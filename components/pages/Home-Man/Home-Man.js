@@ -13,7 +13,7 @@ import AnnouncementCard from '../../reusable/Announcement/AnnouncementCard';
 import index from '../../../index';
 import DutyRosterCard from '../../reusable/DutyRoster/DutyRosterCard';
 import {
-  getAuth, 
+  getAuth,
   signOut,
   onAuthStateChanged
 } from 'firebase/auth'
@@ -24,9 +24,9 @@ const auth = getAuth();
 const HomeScreenMan = ({ navigation, user }) => {
   // const navigation = useNavigation()
 
-  const handleSignOut = () =>{
+  const handleSignOut = () => {
     const auth = getAuth();
-    signOut(auth).then(()=>{
+    signOut(auth).then(() => {
       console.log("signed out")
       navigation.replace("Login")
       // sign out successful
@@ -34,16 +34,16 @@ const HomeScreenMan = ({ navigation, user }) => {
       // error 
     })
   }
-  
+
   return (
     <View style={styles.container}>
-      
+
       <SafeAreaView>
         <ScrollView>
 
-        <View style={styles.headerWrapper}>
+          <View style={styles.headerWrapper}>
             {/* Header */}
-            <Image 
+            <Image
               source={require('../../../assets/images/header.png')}
               style={styles.headerImg}
             />
@@ -53,27 +53,36 @@ const HomeScreenMan = ({ navigation, user }) => {
                 <Text style={styles.titlesSubtitle}>CPL Nicholas</Text>
               </View>
             </View>
-            <Image 
-              source={require('../../../assets/images/nic.jpg')}
-              style={styles.profileImage}
-            />
+            <TouchableOpacity
+              onPress={() => navigation.navigate('PersonalDataMan')}
+            >
+              <Image
+                source={require('../../../assets/images/nic.jpg')}
+                style={styles.profileImage}
+              />
+            </TouchableOpacity>
+
           </View>
 
           {/* Today View */}
           <View style={styles.header}></View>
           <View style={styles.bodyWrapper}>
             <View>
-              
-              {/* <Text style={styles.bodyTitleWhite}>Quick Actions</Text> */}
-              
               <View style={styles.buttonRow}>
-                  <QuickButton navigation={navigation} title={'PACKING LIST'} nextPage={'PackingList'}/>
-                  <QuickButton navigation={navigation} title={'UPLOAD MC'} nextPage={'HomeCom'} />
-                  <QuickButton navigation={navigation} title={'PROFILE'} nextPage={'PersonalData'} />
+                <QuickButton navigation={navigation} title={'PACKING LIST'} nextPage={'PackingList'} />
+                <QuickButton navigation={navigation} title={'UPLOAD MC'} nextPage={'HomeCom'} />
+                <QuickButton navigation={navigation} title={'PROFILE'} nextPage={'PersonalDataMan'} />
               </View>
-                          
-              <Text style={styles.bodyTitle}>What's happening next?</Text>
-              <ScheduleCard/>
+              <View style={styles.textWrapper}>
+                <Text style={styles.bodyTitle}>What's happening next?</Text>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate('ScheduleMan')}
+                >
+                  <Text style={styles.Add}>View All</Text>
+                </TouchableOpacity>
+              </View>
+
+              <ScheduleCard />
               <View style={styles.textWrapper}>
                 <Text style={styles.bodyTitle}>Duty Roster</Text>
                 <TouchableOpacity
@@ -91,16 +100,16 @@ const HomeScreenMan = ({ navigation, user }) => {
               </View>
               <AnnouncementCard />
               <TouchableOpacity
-                  onPress={handleSignOut}
-                  style={styles.button}
-                >
-                  <Text style={styles.orderWrapper}>Sign out</Text>
-                </TouchableOpacity>
+                onPress={handleSignOut}
+                style={styles.button}
+              >
+                <Text style={styles.orderWrapper}>Sign out</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </ScrollView>
       </SafeAreaView>
-      
+
     </View>
   );
 }
@@ -186,7 +195,7 @@ const styles = StyleSheet.create({
     color: colors.white,
     marginTop: 20,
   },
-  
+
   orderWrapper: {
     marginTop: 60,
     marginHorizontal: 20,

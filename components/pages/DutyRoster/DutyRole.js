@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import { ScrollView } from 'react-native-web';
 import colors from '../../../assets/colors/colors';
 import Duty from './Duty';
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     dutyItems: {
         backgroundColor: '#F5F5F5', 
         // height: 448,
-        width: 331,
+        width: Dimensions.get('window').width * 0.9,
         height:100,
         flexDirection: 'column',
         justifyContent: 'flex-start',

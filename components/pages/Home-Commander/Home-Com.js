@@ -11,6 +11,8 @@ import { NavigationHelpersContext } from '@react-navigation/native';
 import QuickButton from '../../reusable/Button';
 import AnnouncementCard from '../../reusable/Announcement/AnnouncementCard';
 import index from '../../../index';
+import DutyRosterCard from '../../reusable/DutyRoster/DutyRosterCard';
+
 
 import {
   getAuth, 
@@ -55,28 +57,38 @@ const HomeScreenCom = ({ navigation, user }) => {
                   <Text style={styles.titlesSubtitle}>LTA Josephine</Text>
               </View>
             </View>
-            <Image 
-              source={require('../../../assets/images/dp.png')}
-              style={styles.profileImage}
-            />
+            <TouchableOpacity
+              onPress={() => navigation.navigate('PersonalData')}
+            >
+              <Image
+                source={require('../../../assets/images/dp.png')}
+                style={styles.profileImage}
+              />
+            </TouchableOpacity>
           </View>
           {/* Today View */}
           <View style={styles.header}></View>
           <View style={styles.bodyWrapper}>
             <View>
-              
-              {/* <Text style={styles.bodyTitleWhite}>Quick Actions</Text> */}
-              
+                            
               <View style={styles.buttonRow}>
                   <QuickButton navigation={navigation} title={'SCHEDULER'} nextPage={'Schedule'} />
                   <QuickButton navigation={navigation} title={'PACKING LIST'} nextPage={'PackingList'} />
                   <QuickButton navigation={navigation} title={'BROADCAST'} nextPage={'CreateBroadcast'} />
                   <QuickButton navigation={navigation} title={'UPLOAD MC'} nextPage={'HomeMan'} />
-                  <QuickButton navigation={navigation} title={'DUTY ROSTER'} nextPage={'HomeCom'} />
+                  <QuickButton navigation={navigation} title={'DUTY ROSTER'} nextPage={'DutyRoster'} />
                   <QuickButton navigation={navigation} title={'PROFILE'} nextPage={'PersonalData'} />
               </View>
                           
-              <Text style={styles.bodyTitle}>What's happening next?</Text>
+              <View style={styles.textWrapper}>
+                <Text style={styles.bodyTitle}>What's happening next?</Text>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate('Schedule')}
+                >
+                  <Text style={styles.Add}>+</Text>
+                </TouchableOpacity>
+              </View>
+              
               <ScheduleCard/>
               <View style={styles.textWrapper}>
                 <Text style={styles.bodyTitle}>Announcements</Text>
@@ -87,7 +99,15 @@ const HomeScreenCom = ({ navigation, user }) => {
                 </TouchableOpacity>
               </View>
               <AnnouncementCard />
-              
+              <View style={styles.textWrapper}>
+                <Text style={styles.bodyTitle}>Duty Roster</Text>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate('DutyRoster')}
+                >
+                  <Text style={styles.ViewAll}>View All</Text>
+                </TouchableOpacity>
+              </View>
+              <DutyRosterCard />
               <TouchableOpacity
                   onPress={handleSignOut}
                   style={styles.button}

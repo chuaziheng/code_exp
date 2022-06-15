@@ -3,7 +3,6 @@ import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Dimensions
 import colors from '../../../assets/colors/colors';
 import Feather from 'react-native-vector-icons/Feather';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
 import {
     getAuth,
     signOut,
@@ -13,7 +12,7 @@ import {
 
 const auth = getAuth();
 
-const PersonalData = ({ navigation, user }) => {
+const PersonalDataMan = ({ navigation, user }) => {
     // const navigation = useNavigation()
 
     const handleSignOut = () => {
@@ -42,11 +41,11 @@ const PersonalData = ({ navigation, user }) => {
                         <Text style={styles.title}>Profile</Text>
                     </View>
                     <Image
-                        source={require('../../../assets/images/dp.png')}
+                        source={require('../../../assets/images/nic.jpg')}
                         style={styles.profileImage}
                     />
-                    <Text style={styles.titlesTitle}>Josephine Hemingway</Text>
-                    <Text style={styles.titlesSubtitle}>MAJOR</Text>
+                    <Text style={styles.titlesTitle}>Nicholas Halim</Text>
+                    <Text style={styles.titlesSubtitle}>CORPORAL</Text>
                     <TouchableOpacity
                         onPress={handleSignOut}
                         style={styles.button}
@@ -202,4 +201,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default PersonalData;
+export default PersonalDataMan;
