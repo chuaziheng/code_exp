@@ -11,13 +11,13 @@ import { NavigationHelpersContext } from '@react-navigation/native';
 import QuickButton from '../../reusable/Button';
 import AnnouncementCard from '../../reusable/Announcement/AnnouncementCard';
 import index from '../../../index';
-import { useNavigation } from '@react-navigation/core';
+
 import {
   getAuth, 
   signOut,
   onAuthStateChanged
 } from 'firebase/auth'
-import DutyRosterCard from '../../reusable/DutyRoster/DutyRosterCard';
+
 
 
 const auth = getAuth();
@@ -52,7 +52,7 @@ const HomeScreenCom = ({ navigation, user }) => {
               <View style={styles.titlesWrapper}>
               {/* <Feather name="menu" size={24} color={colors.white} /> */}
                   <Text style={styles.titlesSubtitle}>Hello,</Text>
-                  <Text style={styles.titlesSubtitle}>MAJ Josephine</Text>
+                  <Text style={styles.titlesSubtitle}>LTA Josephine</Text>
               </View>
             </View>
             <Image 
@@ -87,15 +87,7 @@ const HomeScreenCom = ({ navigation, user }) => {
                 </TouchableOpacity>
               </View>
               <AnnouncementCard />
-              <View style={styles.textWrapper}>
-                <Text style={styles.bodyTitle}>Duty Roster</Text>
-                <TouchableOpacity
-                  onPress={() => navigation.navigate('DutyRoster')}
-                >
-                  <Text style={styles.ViewAll}>View All</Text>
-                </TouchableOpacity>
-              </View>
-              <DutyRosterCard />
+              
               <TouchableOpacity
                   onPress={handleSignOut}
                   style={styles.button}

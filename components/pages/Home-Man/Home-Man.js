@@ -11,7 +11,7 @@ import { NavigationHelpersContext } from '@react-navigation/native';
 import QuickButton from '../../reusable/Button';
 import AnnouncementCard from '../../reusable/Announcement/AnnouncementCard';
 import index from '../../../index';
-import { useNavigation } from '@react-navigation/core';
+import DutyRosterCard from '../../reusable/DutyRoster/DutyRosterCard';
 import {
   getAuth, 
   signOut,
@@ -67,20 +67,25 @@ const HomeScreenMan = ({ navigation, user }) => {
               {/* <Text style={styles.bodyTitleWhite}>Quick Actions</Text> */}
               
               <View style={styles.buttonRow}>
-                  <QuickButton navigation={navigation} title={'SCHEDULER'} nextPage={'HomeCom'} />
                   <QuickButton navigation={navigation} title={'PACKING LIST'} nextPage={'PackingList'}/>
                   <QuickButton navigation={navigation} title={'UPLOAD MC'} nextPage={'HomeCom'} />
-                  <QuickButton navigation={navigation} title={'DUTY ROSTER'} nextPage={'DutyRoster'} />
                   <QuickButton navigation={navigation} title={'PROFILE'} nextPage={'PersonalData'} />
               </View>
                           
               <Text style={styles.bodyTitle}>What's happening next?</Text>
               <ScheduleCard/>
               <View style={styles.textWrapper}>
-                <Text style={styles.bodyTitle}>Announcements</Text>
+                <Text style={styles.bodyTitle}>Duty Roster</Text>
                 <TouchableOpacity
-                  // onPress={() => navigation.navigate()}
+                  onPress={() => navigation.navigate('DutyRoster')}
                 >
+                  <Text style={styles.Add}>View All</Text>
+                </TouchableOpacity>
+              </View>
+              <DutyRosterCard />
+              <View style={styles.textWrapper}>
+                <Text style={styles.bodyTitle}>Announcements</Text>
+                <TouchableOpacity>
                   <Text style={styles.Add}>View All</Text>
                 </TouchableOpacity>
               </View>
