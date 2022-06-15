@@ -1,10 +1,34 @@
 # Read ME
 
+# DSTA BRAINHACK CODE_EXP 2022 - Team Skiddos
+## Team Members:
+- Josephine Agatha Hemingway
+- Nicholas Arlin Halim
+- Pooja Srinivas Nag
+- Chua Zi Heng
+
+
+# Welcome to NSMate! 
+
+This is a mobile app aimed to tackle the pains of reservist NS men in Singapore. It is a one stop application for all the needs of NSmen in reservist! 
+
+## Tech Stack used:
+- React Native with Expo (JS)
+- Firebase
+
+## Login Details:
+- username - password - (man/commander)
+- josephine@skeeddos.com - Josephine - commander
+- nichalim@skeeddos.com - Nichalim - man
+
+### Note:
 ## Dev
+- `git clone` the repository and run the following commands:
+
 1. `npm install -g expo-cli`
 2. `npm install`
 3. To start, run `expo start` or `npm start`
-4. Create a branch with `git checkout -b 'branchname'
+4. Open web browser version of the mobile app and `Ctrl+Shift+I` to open Developer Tools and view with a `401 x 897` frame to simulate the mobile app
 
 ## Setting up Firebase 
 
@@ -17,3 +41,4 @@
 8. `expo start`
 
 Ensure that the index.js file is added to your project before running the `expo start` code.
+
