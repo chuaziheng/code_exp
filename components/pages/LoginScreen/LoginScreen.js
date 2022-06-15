@@ -1,7 +1,6 @@
 import { useNavigation } from '@react-navigation/core'
 import React, { useEffect, useState } from 'react'
-// import { StyleSheet, Text, View } from 'react-native'
-import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native'
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -93,8 +92,18 @@ const LoginScreen = () => {
         <KeyboardAvoidingView
             style={styles.container}
             behavior="padding"
-        >
+        >   
             <View style={styles.topButtonContainer}>
+            <View style={styles.header}>
+              <View style={styles.titlesWrapper}>
+              <Image
+                  source={require('../../../assets/splash.png')}
+                  style={styles.headerImg}
+                />
+                <Text style={styles.titlesTitle}>NS Mate</Text>
+                <Text style={styles.titlesSubtitle}>A one stop service for all NSmen</Text>
+              </View>
+            </View>
             <TouchableOpacity
                 style={styles.singpassButton}
             >
@@ -140,12 +149,25 @@ const LoginScreen = () => {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#5E7667",
+      backgroundColor: colors.white,
       justifyContent: 'center',
       alignItems: 'center',
     },
     inputContainer: {
       width: '80%'
+    },
+    titlesSubtitle: {
+      // fontFamily: 'Montserrat-Regular',
+      fontSize: 20,
+      width: 300,
+      fontWeight: '500',
+      color: "#5E7667",
+    },
+    titlesTitle: {
+      // fontFamily: 'Montserrat-Bold',
+      fontSize: 40,
+      color: colors.textDark,
+      fontWeight: '600'
     },
     input: {
       backgroundColor: 'white',
@@ -154,6 +176,13 @@ const LoginScreen = () => {
       borderRadius: 10,
       marginTop: 5,
     },
+    header: {
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginBottom: 30,
+      textAlign: 'center'
+    }, 
     topButtonContainer: {
         width: '60%',
         justifyContent: 'center',
