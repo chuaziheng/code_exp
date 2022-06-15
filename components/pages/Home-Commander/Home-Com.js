@@ -88,8 +88,13 @@ const HomeScreenCom = ({ navigation, user }) => {
                   <Text style={styles.Add}>+</Text>
                 </TouchableOpacity>
               </View>
+              <TouchableOpacity
+                  onPress={() => navigation.navigate('ScheduleMan')}
+                >
+                  <ScheduleCard/>
+                </TouchableOpacity>
               
-              <ScheduleCard/>
+              
               <View style={styles.textWrapper}>
                 <Text style={styles.bodyTitle}>Announcements</Text>
                 <TouchableOpacity
@@ -107,7 +112,12 @@ const HomeScreenCom = ({ navigation, user }) => {
                   <Text style={styles.ViewAll}>View All</Text>
                 </TouchableOpacity>
               </View>
-              <DutyRosterCard />
+              <TouchableOpacity
+                  onPress={() => navigation.navigate('DutyRoster')}
+                >
+                  <DutyRosterCard />
+                </TouchableOpacity>
+              
               <TouchableOpacity
                   onPress={handleSignOut}
                   style={styles.button}

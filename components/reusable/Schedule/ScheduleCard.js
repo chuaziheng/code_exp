@@ -9,26 +9,16 @@ import { scheduleData } from '../../../assets/dummydata/data';
 const ScheduleCard = () => {
     return (
         <View style={styles.scheduleCardWrapper}>
-            <TouchableOpacity
-            //   key={item.id}
-            //   onPress={() =>
-            //     navigation.navigate('Details', {
-            //       item: item,
-            //     })
-              >
-                <View>
-                    {
-                        scheduleData.map((item) => (
-                            <ScheduleItem 
-                                key={item.id}
-                                time={item.time}
-                                task={item.task}
-                                venue={item.venue}
-                                />
-                        ))
-                    }
-                </View>
-            </TouchableOpacity>
+            {
+                scheduleData.map((item) => (
+                    <ScheduleItem
+                        key={item.id}
+                        time={item.time}
+                        task={item.task}
+                        venue={item.venue}
+                    />
+                ))
+            }
         </View>
     )
 }
@@ -58,6 +48,6 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.05,
         shadowRadius: 10,
         elevation: 2,
-        
+
     },
 });

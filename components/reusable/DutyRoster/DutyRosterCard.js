@@ -9,26 +9,18 @@ import Duty from '../../pages/DutyRoster/Duty';
 const DutyRosterCard = () => {
     return (
         <View style={styles.DutyRosterCardWrapper}>
-            <TouchableOpacity
-            //   key={item.id}
-            //   onPress={() =>
-            //     navigation.navigate('Details', {
-            //       item: item,
-            //     })
-              >
-                <View>
-                    {
-                        dutyData.map((i) => (
-                            <Duty 
-                                key={i.id}
-                                startTime={i.time} 
-                                personnel={i.personel}
-                                dutyStatus={i.status}
-                                />
-                        ))
-                    }
-                </View>
-            </TouchableOpacity>
+            
+            {
+                dutyData.map((i) => (
+                    <Duty 
+                        key={i.id}
+                        startTime={i.time} 
+                        personnel={i.personel}
+                        dutyStatus={i.status}
+                        />
+                ))
+            }
+
         </View>
     )
 }
